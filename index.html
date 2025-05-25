@@ -2,35 +2,147 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Trang trưng bày sản phẩm của Vinh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee House - Hương vị đậm đà</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Chào mừng đến với trang sản phẩm của tôi</h1>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">☕ Coffee House</div>
+        <ul class="nav-links">
+          <li><a href="#home">Trang chủ</a></li>
+          <li><a href="#menu">Thực đơn</a></li>
+          <li><a href="#about">Về chúng tôi</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <h2>Sản phẩm nổi bật</h2>
-    <ul>
-      <li><strong>Sản phẩm A</strong> - Mô tả ngắn sản phẩm A</li>
-      <li><strong>Sản phẩm B</strong> - Mô tả ngắn sản phẩm B</li>
-    </ul>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Coffee House</h1>
+        <p>Khám phá hương vị cà phê đậm đà, thơm ngon nhất</p>
+        <a href="#menu" class="cta-button">Xem Thực Đơn</a>
+      </div>
+    </section>
 
-    <h2>Liên hệ đặt hàng</h2>
-    <form action="https://formspree.io/f/xgvkjagy" method="POST">
-      <label for="name">Họ và tên:</label><br />
-      <input type="text" id="name" name="name" required /><br /><br />
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2 class="section-title">Thực Đơn</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <h3>☕ Cà Phê Đen Đá</h3>
+            <p>Cà phê truyền thống Việt Nam, đậm đà và thơm ngon</p>
+            <div class="price">25.000đ</div>
+          </div>
+          <div class="menu-item">
+            <h3>🥛 Cà Phê Sữa Đá</h3>
+            <p>Sự kết hợp hoàn hảo giữa cà phê đậm đà và sữa thơm ngọt</p>
+            <div class="price">30.000đ</div>
+          </div>
+          <div class="menu-item">
+            <h3>🧊 Cà Phê Đen Nóng</h3>
+            <p>Cà phê đen nóng hổi, phù hợp cho những ngày se lạnh</p>
+            <div class="price">22.000đ</div>
+          </div>
+          <div class="menu-item">
+            <h3>☕ Cappuccino</h3>
+            <p>Cà phê espresso kết hợp với sữa bọt mịn màng</p>
+            <div class="price">45.000đ</div>
+          </div>
+          <div class="menu-item">
+            <h3>🍃 Trà Thái Nguyên</h3>
+            <p>Trà xanh thơm mát, thanh tịnh từ cao nguyên Thái Nguyên</p>
+            <div class="price">20.000đ</div>
+          </div>
+          <div class="menu-item">
+            <h3>🥤 Sinh Tố Bơ</h3>
+            <p>Sinh tố bơ thơm béo, bổ dưỡng và ngon miệng</p>
+            <div class="price">35.000đ</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="_replyto" required /><br /><br />
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Về Chúng Tôi</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Câu chuyện của Coffee House</h3>
+            <p>
+              Chúng tôi là một quán cà phê nhỏ được thành lập với tình yêu dành
+              cho cà phê và mong muốn mang đến cho khách hàng những trải nghiệm
+              tuyệt vời nhất.
+            </p>
+            <p>
+              Với hơn 10 năm kinh nghiệm trong ngành cà phê, chúng tôi cam kết
+              sử dụng những hạt cà phê chất lượng cao nhất, được chọn lọc kỹ
+              càng từ các vùng trồng cà phê nổi tiếng.
+            </p>
+            <p>
+              Không gian quán được thiết kế ấm cúng, thoải mái, là nơi lý tưởng
+              để bạn thư giãn, làm việc hoặc gặp gỡ bạn bè.
+            </p>
+          </div>
+          <div class="about-image">
+            <div>🏪 Không Gian Ấm Cúng</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <label for="phone">Số điện thoại:</label><br />
-      <input type="tel" id="phone" name="phone" required /><br /><br />
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xgvkjagy"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="name">Họ và Tên</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Số Điện Thoại</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="message">Tin Nhắn</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Hãy cho chúng tôi biết bạn muốn gì..."
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+        </form>
+      </div>
+    </section>
 
-      <label for="product">Sản phẩm quan tâm:</label><br />
-      <input type="text" id="product" name="product" required /><br /><br />
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Coffee House. Tất cả quyền được bảo lưu.</p>
+        <p>📍 123 Đường ABC, Quận XYZ, TP.HCM | ☎️ 0123-456-789</p>
+      </div>
+    </footer>
 
-      <label for="message">Ghi chú:</label><br />
-      <textarea id="message" name="message"></textarea><br /><br />
+    <!-- Floating Action Button -->
+    <a href="#contact" class="fab" title="Liên hệ ngay"> 📞 </a>
 
-      <button type="submit">Gửi thông tin</button>
-    </form>
+    <script src="script.js"></script>
   </body>
 </html>
