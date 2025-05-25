@@ -3,66 +3,217 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee House - Hương vị đậm đà</title>
+    <title>Coffee Shop - Cà Phê & Bột Cà Phê</title>
+    <meta
+      name="description"
+      content="Cửa hàng cà phê và bột cà phê chất lượng cao"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- Header -->
-    <header>
-      <nav>
-        <div class="logo">☕ Coffee House</div>
-        <ul class="nav-links">
-          <li><a href="#home">Trang chủ</a></li>
-          <li><a href="#menu">Thực đơn</a></li>
-          <li><a href="#about">Về chúng tôi</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-coffee"></i>
+          <span>Coffee</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Trang Chủ</a></li>
+          <li><a href="#products" class="nav-link">Sản Phẩm</a></li>
+          <li><a href="#about" class="nav-link">Giới Thiệu</a></li>
+          <li><a href="#contact" class="nav-link">Liên Hệ</a></li>
         </ul>
-      </nav>
-    </header>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <div class="hero-3d-container">
+        <canvas id="hero-canvas"></canvas>
+      </div>
       <div class="hero-content">
-        <h1>Coffee House</h1>
-        <p>Khám phá hương vị cà phê đậm đà, thơm ngon nhất</p>
-        <a href="#menu" class="cta-button">Xem Thực Đơn</a>
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Trải Nghiệm <span class="highlight">Coffee</span> Đẳng Cấp
+          </h1>
+          <p class="hero-subtitle">
+            Khám phá cà phê và bột cà phê xay với trải nghiệm mua sắm
+          </p>
+          <div class="hero-buttons">
+            <button
+              class="btn btn-primary"
+              onclick="scrollToSection('products')"
+            >
+              <i class="fas fa-shopping-bag"></i>
+              Mua Ngay
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="scrollToSection('about')"
+            >
+              <i class="fas fa-play"></i>
+              Tìm Hiểu Thêm
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
       </div>
     </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu">
+    <!-- Products Section -->
+    <section id="products" class="products">
       <div class="container">
-        <h2 class="section-title">Thực Đơn</h2>
-        <div class="menu-grid">
-          <div class="menu-item">
-            <h3>☕ Cà Phê Đen Đá</h3>
-            <p>Cà phê truyền thống Việt Nam, đậm đà và thơm ngon</p>
-            <div class="price">18.000đ</div>
+        <div class="section-header">
+          <h2 class="section-title">Sản Phẩm Cao Cấp</h2>
+          <p class="section-subtitle">
+            Khám phá bộ sưu tập sản phẩm cà phê được tuyển chọn kỹ lưỡng
+          </p>
+        </div>
+
+        <div class="product-categories">
+          <button class="category-btn active" data-category="all">
+            Tất Cả Sản Phẩm
+          </button>
+          <button class="category-btn" data-category="cups">Cốc Cà Phê</button>
+          <button class="category-btn" data-category="powder">
+            Bột Cà Phê
+          </button>
+        </div>
+
+        <div class="products-grid">
+          <!-- Coffee Cups -->
+          <div class="product-card" data-category="cups">
+            <div class="product-3d-container">
+              <canvas
+                class="product-canvas"
+                data-product="ceramic-cup"
+              ></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cốc Gốm Cao Cấp</h3>
+              <p class="product-description">
+                Cốc gốm thủ công với thiết kế ergonomic
+              </p>
+              <div class="product-price">599.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3>🥛 Cà Phê Sữa Đá</h3>
-            <p>Sự kết hợp hoàn hảo giữa cà phê đậm đà và sữa thơm ngọt</p>
-            <div class="price">20.000đ</div>
+
+          <div class="product-card" data-category="cups">
+            <div class="product-3d-container">
+              <canvas class="product-canvas" data-product="glass-cup"></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cốc Thủy Tinh Borosilicate</h3>
+              <p class="product-description">
+                Cốc thủy tinh chịu nhiệt cho trải nghiệm cà phê hoàn hảo
+              </p>
+              <div class="product-price">459.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3>🧊 Cà Phê Đen Nóng</h3>
-            <p>Cà phê đen nóng hổi, phù hợp cho những ngày se lạnh</p>
-            <div class="price">18.000đ</div>
+
+          <div class="product-card" data-category="cups">
+            <div class="product-3d-container">
+              <canvas class="product-canvas" data-product="travel-mug"></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Cốc Giữ Nhiệt Du Lịch</h3>
+              <p class="product-description">
+                Cốc cách nhiệt 2 lớp cho những người yêu cà phê di động
+              </p>
+              <div class="product-price">799.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3>☕ Cappuccino</h3>
-            <p>Cà phê espresso kết hợp với sữa bọt mịn màng</p>
-            <div class="price">45.000đ</div>
+
+          <!-- Coffee Powder -->
+          <div class="product-card" data-category="powder">
+            <div class="product-3d-container">
+              <canvas
+                class="product-canvas"
+                data-product="arabica-powder"
+              ></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Arabica Cao Cấp</h3>
+              <p class="product-description">
+                Arabica với hương thơm nhẹ và vị chua ở đầu môi
+              </p>
+              <div class="product-price">399.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3>🍃 Trà Thái Nguyên</h3>
-            <p>Trà xanh thơm mát, thanh tịnh từ cao nguyên Thái Nguyên</p>
-            <div class="price">20.000đ</div>
+
+          <div class="product-card" data-category="powder">
+            <div class="product-3d-container">
+              <canvas
+                class="product-canvas"
+                data-product="espresso-powder"
+              ></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Robusta Rang Đậm</h3>
+              <p class="product-description">
+                Robusta đắng đậm và mạnh mẽ cho hương vị tuyệt vời
+              </p>
+              <div class="product-price">239.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
-          <div class="menu-item">
-            <h3>🥤 Sinh Tố Bơ</h3>
-            <p>Sinh tố bơ thơm béo, bổ dưỡng và ngon miệng</p>
-            <div class="price">35.000đ</div>
+
+          <div class="product-card" data-category="powder">
+            <div class="product-3d-container">
+              <canvas
+                class="product-canvas"
+                data-product="organic-powder"
+              ></canvas>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Organic Rang Nhẹ</h3>
+              <p class="product-description">
+                Hạt cà phê hữu cơ được chứng nhận với hương vị mềm mại, nhẹ
+                nhàng
+              </p>
+              <div class="product-price">549.000đ</div>
+              <button class="btn btn-product">
+                <i class="fas fa-cart-plus"></i>
+                Thêm Vào Giỏ
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -71,26 +222,46 @@
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
-        <h2 class="section-title">Về Chúng Tôi</h2>
         <div class="about-content">
           <div class="about-text">
-            <h3>Câu chuyện của Coffee House</h3>
-            <p>
-              Một quán cà phê được đặt tại một góc nhỏ của con đường Thạnh Lộc ,
-              đối diện là một con kênh nhỏ nhỏ, bên cạnh đó là chiếc máy rang
-              tạo nên một không khí ấm cúng.
+            <h2 class="section-title">Chế Tác Với Đam Mê</h2>
+            <p class="about-description">
+              Chúng tôi là những người đam mê cà phê, tận tâm mang đến cho bạn
+              trải nghiệm cà phê tuyệt vời nhất. Bộ sưu tập cao cấp của chúng
+              tôi bao gồm các loại hạt cà phê được lựa chọn cẩn thận và những
+              chiếc cốc được chế tác tinh xảo để nâng cao từng ngụm cà phê.
             </p>
-            <p>
-              Cà phê của chúng tôi sẽ là một sự kết hợp hoài hòa giữa 2 loại là
-              Arabica và Robusta.
-            </p>
-
-            </p> Arabica đem lại hương thơm thanh thoát, vị chua nhẹ và tinh tế, trong khi Robusta bổ sung độ đậm,
-              vị đắng mạnh và lượng caffeine cao.
-            </p>
+            <div class="about-features">
+              <div class="feature">
+                <i class="fas fa-leaf"></i>
+                <div class="feature-content">
+                  <h4>Nguồn Gốc Bền Vững</h4>
+                  <p>
+                    Hạt cà phê có nguồn gốc đạo đức từ các trang trại bền vững
+                  </p>
+                </div>
+              </div>
+              <div class="feature">
+                <i class="fas fa-award"></i>
+                <div class="feature-content">
+                  <h4>Chất Lượng Cao Cấp</h4>
+                  <p>
+                    Hạt cà phê được chọn lọc thủ công và cốc được chế tác thủ
+                    công
+                  </p>
+                </div>
+              </div>
+              <div class="feature">
+                <i class="fas fa-cube"></i>
+                <div class="feature-content">
+                  <h4>Trải Nghiệm 3D</h4>
+                  <p>Hình ảnh sản phẩm 3D tương tác</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="about-image">
-            <div>🏪 Không Gian Ấm Cúng</div>
+          <div class="about-3d">
+            <canvas id="about-canvas"></canvas>
           </div>
         </div>
       </div>
@@ -99,49 +270,161 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/xgvkjagy"
-          method="POST"
-        >
-          <div class="form-group">
-            <label for="name">Họ và Tên</label>
-            <input type="text" id="name" name="name" required />
+        <div class="section-header">
+          <h2 class="section-title">Liên Hệ Với Chúng Tôi</h2>
+          <p class="section-subtitle">
+            Có câu hỏi về sản phẩm của chúng tôi? Chúng tôi rất mong được nghe
+            từ bạn!
+          </p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Ghé Thăm Cửa Hàng</h4>
+                <p>Thạnh Lộc, Quận 12, Thành phố Hồ Chí Minh, Việt Nam</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Gọi Cho Chúng Tôi</h4>
+                <p>+84 856.399.945</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email Cho Chúng Tôi</h4>
+                <p>vinhdiep.110@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Giờ Làm Việc</h4>
+                <p>Thứ 2-6: 7:00-22:00<br />Thứ 7-CN: 8:00-24:00</p>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Số Điện Thoại</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group">
-            <label for="message">Tin Nhắn</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Hãy cho chúng tôi biết bạn muốn gì..."
-            ></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
-        </form>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xgvkjagy"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Họ Tên *</label>
+              <input type="text" id="name" name="name" required />
+              <span class="form-error" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required />
+              <span class="form-error" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Tiêu Đề *</label>
+              <input type="text" id="subject" name="subject" required />
+              <span class="form-error" id="subject-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tin Nhắn *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+              <span class="form-error" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i>
+              Gửi Tin Nhắn
+            </button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
       <div class="container">
-        <p>&copy; 2805 Coffee House. Tất cả quyền được bảo lưu.</p>
-        <p>📍 Thạnh Lộc, Quận 12, TP.HCM | ☎️ 0856.399.945</p>
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <i class="fas fa-coffee"></i>
+              <span>3D Coffee</span>
+            </div>
+            <p>Trải nghiệm cà phê cao cấp</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Liên Kết Nhanh</h4>
+            <ul>
+              <li><a href="#home">Trang Chủ</a></li>
+              <li><a href="#products">Sản Phẩm</a></li>
+              <li><a href="#about">Giới Thiệu</a></li>
+              <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Sản Phẩm</h4>
+            <ul>
+              <li><a href="#products">Cốc Cà Phê</a></li>
+              <li><a href="#products">Bột Cà Phê</a></li>
+              <li><a href="#products">Phụ Kiện</a></li>
+              <li><a href="#products">Bộ Quà Tặng</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Hỗ Trợ</h4>
+            <ul>
+              <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+              <li><a href="#">Thông Tin Vận Chuyển</a></li>
+              <li><a href="#">Đổi Trả</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2805 Coffee. Tất cả quyền được bảo lưu.</p>
+        </div>
       </div>
     </footer>
 
-    <!-- Floating Action Button -->
-    <a href="#contact" class="fab" title="Liên hệ ngay"> 📞 </a>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-content">
+        <div class="coffee-loading">
+          <i class="fas fa-coffee"></i>
+        </div>
+        <h3>Chào Mừng Bạn Đến Với Cửa Hàng...</h3>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
